@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 const express = require('express'),
       app = express(),
       bodyParser = require('body-parser');
@@ -11,8 +12,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/todo", todoRouter);
-app.use("/user", UserRouter);
+app.use("https://tpa5-todolist-skilvul-zaid.herokuapp.com/todo", todoRouter);
+app.use("https://tpa5-todolist-skilvul-zaid.herokuapp.com/user", UserRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
