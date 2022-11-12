@@ -6,15 +6,18 @@ const express = require('express'),
 //ini nyambung ke file routes
 const todoRouter = require('./routes/todo')
 const UserRouter = require('./routes/user')
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get("/",(req,res)=>{
+  res.send("hello")
+})
 app.use("/todo", todoRouter);
 app.use("/user", UserRouter);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening on port ${port}`)
 })
