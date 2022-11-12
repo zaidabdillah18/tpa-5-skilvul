@@ -5,7 +5,7 @@ const express = require('express'),
 //ini nyambung ke file routes
 const todoRouter = require('./routes/todo')
 const UserRouter = require('./routes/user')
-const port = 3000
+const port = process.env.PORT || 3000;
 
 
 app.use(bodyParser.json())
